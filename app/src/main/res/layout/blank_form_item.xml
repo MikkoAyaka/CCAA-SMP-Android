@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_marginStart="20dp"
         android:text="表单信息项名称"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textColor="@color/black"
         android:gravity="center_vertical|start" />
     <EditText

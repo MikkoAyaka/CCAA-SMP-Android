@@ -62,7 +62,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="自愿报告"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -84,7 +84,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="强制报告"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -106,7 +106,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="安全检查"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -127,7 +127,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="风险管理"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -148,7 +148,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="统计分析"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -169,7 +169,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="资料库"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -190,7 +190,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="培训考试"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -211,7 +211,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="安全交流"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
 
