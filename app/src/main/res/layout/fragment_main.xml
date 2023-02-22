@@ -62,7 +62,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="自愿报告"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/main_text_size"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -84,7 +84,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="强制报告"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/main_text_size"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -106,7 +106,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="安全检查"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/main_text_size"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -127,7 +127,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="风险管理"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/main_text_size"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -148,7 +148,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="统计分析"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/main_text_size"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -169,7 +169,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="资料库"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/main_text_size"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -190,7 +190,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="培训考试"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/main_text_size"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -211,7 +211,7 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center"
                     android:text="安全交流"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/main_text_size"
                     android:textColor="@color/black"/>
             </LinearLayout>
 
@@ -267,12 +267,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical|center"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="本月"/>
                     <TextView
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical|center"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="现存隐患数"/>
                 </LinearLayout>
                 <LinearLayout
@@ -285,12 +287,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="0"/>
                     <TextView
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="0"/>
                 </LinearLayout>
             </LinearLayout>
@@ -332,12 +336,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical|center"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="本月"/>
                     <TextView
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical|center"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="累计随手拍"/>
                 </LinearLayout>
                 <LinearLayout
@@ -350,12 +356,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="0"/>
                     <TextView
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="0"/>
                 </LinearLayout>
             </LinearLayout>
@@ -407,6 +415,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical|center"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="本月"/>
                     <TextView
                         android:layout_weight="1"
@@ -414,6 +423,7 @@
                         android:layout_height="0dp"
                         android:gravity="center_vertical|center"
                         android:textAlignment="center"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="现存危险源数"/>
                 </LinearLayout>
                 <LinearLayout
@@ -426,12 +436,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="0"/>
                     <TextView
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="0"/>
                 </LinearLayout>
 
@@ -475,12 +487,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical|center"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="本月"/>
                     <TextView
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical|center"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="累计强制报告"/>
                 </LinearLayout>
                 <LinearLayout
@@ -493,12 +507,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="0"/>
                     <TextView
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
+                        android:textSize="@dimen/secondary_text_size"
                         android:text="0"/>
                 </LinearLayout>
 

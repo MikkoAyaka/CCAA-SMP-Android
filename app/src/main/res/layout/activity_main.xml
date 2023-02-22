@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#FFAC63"
+            android:background="@color/main_theme_color"
             app:popupTheme="@style/Theme.CCAASMP.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -29,7 +29,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        app:backgroundTint="#FF9B30"
+        app:backgroundTint="@color/secondary_theme_color"
         app:srcCompat="@drawable/share_icon" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

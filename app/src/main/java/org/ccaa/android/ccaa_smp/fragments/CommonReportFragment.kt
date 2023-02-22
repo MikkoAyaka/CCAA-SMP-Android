@@ -31,6 +31,7 @@ class CommonReportFragment : CommonFragment() {
         binding.recyclerview.adapter = FormRVAdapter(FormItemData.nowDataList)
         val layoutManager = LinearLayoutManager(context)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
+
         binding.recyclerview.layoutManager = layoutManager
         binding.recyclerview.addItemDecoration(DividerItemDecoration(binding.root.context, DividerItemDecoration.VERTICAL))
 
