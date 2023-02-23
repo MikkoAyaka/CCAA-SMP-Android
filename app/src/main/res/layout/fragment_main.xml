@@ -120,7 +120,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:src="@drawable/warn_icon" />
+                    android:src="@drawable/risk_manager_icon" />
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="25dp"
@@ -323,7 +323,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/broken_line_icon"/>
+                    android:src="@drawable/camera_icon"/>
 
                 <LinearLayout
                     android:layout_weight="3"
@@ -474,7 +474,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/stat_icon"/>
+                    android:src="@drawable/simple_force_report_icon"/>
 
                 <LinearLayout
                     android:layout_weight="3"
