@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="160dp"
+    android:layout_height="160dp">
+
+    <ImageView
+        android:id="@+id/simple_image"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:src="@drawable/file_icon"
+        android:layout_gravity="center"
+        android:contentDescription="加载失败" />
+
+    <TextView
+        android:id="@+id/simple_text_view"
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:text="文件名称"
+        android:textSize="@dimen/main_text_size"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+</LinearLayout>

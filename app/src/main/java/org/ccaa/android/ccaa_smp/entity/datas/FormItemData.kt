@@ -19,7 +19,8 @@ data class FormItemData(val name : String,val sizeWeight : Int,val nullable : Bo
                 arrayOf("事发区域A","事发区域B","事发区域C","事发区域D","事发区域E","事发区域F","其他区域")),
             FormItemData("事发地点",2,false,TextType.TEXT),
             FormItemData("问题描述及建议",3,true,TextType.TEXT),
-            FormItemData("附件",3,false,TextType.FILE),
+            FormItemData("附图",2,true,TextType.IMAGE),
+            FormItemData("附件",2,false,TextType.FILE),
         )
         val forceReportFormDataList = listOf(
             FormItemData("所属机场",1,false,TextType.TEXT),
@@ -40,7 +41,7 @@ data class FormItemData(val name : String,val sizeWeight : Int,val nullable : Bo
             FormItemData("事件类型",1,true,TextType.OPTIONAL),
             FormItemData("涉及相关",2,true,TextType.MULTI_OPTIONAL,
                 arrayOf("选项1","选项2","选项3","选项4","选项5")),
-            FormItemData("附件",3,false,TextType.FILE),
+            FormItemData("附件",2,false,TextType.FILE),
         )
     }
 }

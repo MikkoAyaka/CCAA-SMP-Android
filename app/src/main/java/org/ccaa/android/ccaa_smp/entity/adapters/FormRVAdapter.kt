@@ -1,12 +1,21 @@
 package org.ccaa.android.ccaa_smp.entity.adapters
 
 import android.app.AlertDialog
-import android.util.AttributeSet
+import android.content.Intent
+import android.graphics.drawable.BitmapDrawable
+import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.LinearLayout.LayoutParams
+import android.widget.ScrollView
+import android.widget.TextView
+import androidx.core.net.toUri
+import androidx.fragment.app.findFragment
+import androidx.recyclerview.widget.RecyclerView.LayoutParams
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.loper7.date_time_picker.DateTimeConfig
 import com.loper7.date_time_picker.dialog.CardDatePickerDialog
@@ -18,10 +27,23 @@ import org.ccaa.android.ccaa_smp.api.abstracts.CommonRVAdapter
 import org.ccaa.android.ccaa_smp.api.enums.TextType
 import org.ccaa.android.ccaa_smp.entity.datas.FormItemData
 import org.ccaa.android.ccaa_smp.entity.viewholders.FormVH
+import org.ccaa.android.ccaa_smp.fragments.CommonReportFragment
 import org.ccaa.android.ccaa_smp.utils.toFullDate
 import org.ccaa.android.ccaa_smp.utils.toSimpleDate
+import org.json.JSONObject
+import java.io.File
+
 
 class FormRVAdapter(private val formItemDataList : List<FormItemData>) : CommonRVAdapter() {
+
+
+    //TODO 目前一个适配器中只能有一个附件、附图表单项，否则数据容器会重复
+
+    var bundle = Bundle()
+    var selectedFiles : List<File> = listOf()
+    var selectedImgs : List<File> = listOf()
+
+    lateinit var linearLayout: LinearLayout
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         view = LayoutInflater.from(parent.context).inflate(R.layout.blank_form_item, parent, false)
@@ -116,17 +138,97 @@ class FormRVAdapter(private val formItemDataList : List<FormItemData>) : CommonR
                 }
             }
             TextType.FILE -> {
-                formVH.editText.hint = "暂未实现 文件选择器"
-                formVH.editText.focusable = View.FOCUSABLE
-                formVH.editText.setOnClickListener {  }
+                formVH.editText.hint = "选择文件"
+                formVH.editText.focusable = View.NOT_FOCUSABLE
+                formVH.editText.setOnClickListener {
+                    val popWindowView = View.inflate(view.context,R.layout.file_selector_popwindow,null)
+                    val dialog = AlertDialog.Builder(view.context)
+                        .setView(popWindowView)
+                        .create()
+                    linearLayout = popWindowView.findViewById(R.id.linear_layout)
+                    refreshDialogFiles()
+                    dialog.show()
+                    val select_button = popWindowView.findViewById<Button>(R.id.select_button)
+                    select_button.setOnClickListener {
+                        bundle = Bundle()
+                        bundle.putString("type","file")
+                        val intent = Intent(Intent.ACTION_GET_CONTENT)
+                        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+                        intent.type = "*/*"
+                        view.findFragment<CommonReportFragment>().fileSelectorResultLauncher.launch(intent)
+                    }
+                    val confirm_button = popWindowView.findViewById<Button>(R.id.confirm_button)
+                    confirm_button.setOnClickListener {
+                        dialog.dismiss()
+                    }
+                }
             }
             TextType.IMAGE -> {
-                formVH.editText.hint = "暂未实现 图片选择器"
-                formVH.editText.focusable = View.FOCUSABLE
-                formVH.editText.setOnClickListener {  }
+
+                formVH.editText.hint = "选择图片"
+                formVH.editText.focusable = View.NOT_FOCUSABLE
+                formVH.editText.setOnClickListener {
+                    val popWindowView = View.inflate(view.context,R.layout.file_selector_popwindow,null)
+                    val dialog = AlertDialog.Builder(view.context)
+                        .setView(popWindowView)
+                        .create()
+                    linearLayout = popWindowView.findViewById(R.id.linear_layout)
+                    refreshDialogImages()
+                    dialog.show()
+                    val select_button = popWindowView.findViewById<Button>(R.id.select_button)
+                    select_button.setOnClickListener {
+                        bundle = Bundle()
+                        bundle.putString("type","image")
+                        val intent = Intent(Intent.ACTION_GET_CONTENT)
+                        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+                        intent.type = "image/*"
+                        view.findFragment<CommonReportFragment>().fileSelectorResultLauncher.launch(intent)
+                    }
+                    val confirm_button = popWindowView.findViewById<Button>(R.id.confirm_button)
+                    confirm_button.setOnClickListener {
+                        dialog.dismiss()
+                    }
+                }
             }
         }
     }
 
     override fun getItemCount(): Int = formItemDataList.size
+
+    fun refreshDialogFiles()
+    {
+        linearLayout.removeAllViews()
+        for (file in selectedFiles)
+        {
+            val view = View.inflate(linearLayout.context,R.layout.simple_graphic_item,null)
+            val textView = view.findViewById<TextView>(R.id.simple_text_view)
+            var fileName = file.name
+            if(fileName.length >= 10)
+            {
+                fileName = fileName.substring(0,10)
+                fileName += "..."
+            }
+            textView.text = fileName
+            linearLayout.addView(view)
+        }
+    }
+    fun refreshDialogImages()
+    {
+        linearLayout.removeAllViews()
+        for (img in selectedImgs)
+        {
+            val view = View.inflate(linearLayout.context,R.layout.simple_graphic_item,null)
+            val imageView = view.findViewById<ImageView>(R.id.simple_image)
+            imageView.setImageURI(img.toUri())
+            val textView = view.findViewById<TextView>(R.id.simple_text_view)
+            var fileName = img.name
+            if(fileName.length >= 10)
+            {
+                fileName = fileName.substring(0,10)
+                fileName += "..."
+            }
+            textView.text = fileName
+            linearLayout.addView(view)
+        }
+    }
 }
