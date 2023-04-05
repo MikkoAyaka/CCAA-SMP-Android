@@ -17,8 +17,8 @@
     </fragment>
     <fragment
         android:id="@+id/CommonReportFragment"
+        android:label="@string/report_fragment_label"
         android:name="org.ccaa.android.ccaa_smp.fragments.CommonReportFragment"
-        android:label="Common Report Fragment"
         tools:layout="@layout/fragment_base_report">
 
         <action
