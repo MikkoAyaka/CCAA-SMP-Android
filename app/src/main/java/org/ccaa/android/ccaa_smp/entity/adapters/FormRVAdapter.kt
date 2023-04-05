@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.HorizontalScrollView
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ScrollView
@@ -88,7 +89,7 @@ class FormRVAdapter(private val formItemDataList : List<FormItemData>) : CommonR
                 formVH.editText.hint = "点击选择"
                 formVH.editText.focusable = View.NOT_FOCUSABLE
                 formVH.editText.setOnClickListener{
-                    val extraData : Array<String> = formItemData.extraData as Array<String>
+                    val extraData : Array<String> = formItemData.extraData as? Array<String> ?: arrayOf()
                     AlertDialog.Builder(view.context)
                         .setSingleChoiceItems(extraData,-1) { dialog, id ->
                             formVH.editText.setText(extraData[id])
@@ -122,7 +123,7 @@ class FormRVAdapter(private val formItemDataList : List<FormItemData>) : CommonR
                 formVH.editText.hint = "点击选择(可多选)"
                 formVH.editText.focusable = View.NOT_FOCUSABLE
                 formVH.editText.setOnClickListener{
-                    val extraData : Array<String> = formItemData.extraData as Array<String>
+                    val extraData : Array<String> = formItemData.extraData as? Array<String> ?: arrayOf()
                     val boolArray = BooleanArray(extraData.size) { false }
                     var resultStr = ""
                     AlertDialog.Builder(view.context)

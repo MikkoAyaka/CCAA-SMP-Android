@@ -56,6 +56,7 @@ class MainFragment : CommonFragment() {
         }
         binding.linearlayoutSafeCheck.setOnClickListener{
             // 打开安全检查页面
+            FormItemData.nowDataList = listOf()
             findNavController().navigate(R.id.nav_form_page)
         }
     }

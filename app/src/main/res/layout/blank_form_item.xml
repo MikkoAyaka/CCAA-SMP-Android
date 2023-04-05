@@ -26,5 +26,4 @@
         android:gravity="center_vertical|center"
         android:hint=""
         android:background="@drawable/shape_small_corner" />
-
 </LinearLayout>
